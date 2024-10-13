@@ -19,35 +19,31 @@
             background-position: center;
             color: black;
             text-align: center;
-            opacity: 0.9;
             overflow: hidden;
         }
-        h1 {
-            font-size: 3em;
-            font-weight: bold;
-            margin: 0;
-        }
-        .hidden {
-            display: none;
-        }
         .password-container {
-            background: rgba(255, 255, 255, 0.8); /* Slightly opaque white background */
-            padding: 20px;
+            background: rgba(255, 255, 255, 0.9); /* Slightly opaque white background */
+            padding: 40px;
             border-radius: 15px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-            text-align: center;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
         }
         .password-title {
-            font-size: 2em;
+            font-size: 2.5em;
             font-weight: bold;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
         input[type="password"] {
-            padding: 10px;
-            border: 2px solid #f6c1d4;
+            padding: 12px;
+            border: 2px solid #ff69b4; /* Hot pink */
             border-radius: 10px;
             font-size: 1em;
             margin-bottom: 10px;
+            width: 80%;
+            transition: border-color 0.3s;
+        }
+        input[type="password"]:focus {
+            border-color: #ff1493; /* Deeper pink */
+            outline: none;
         }
         button {
             padding: 10px 20px;
@@ -62,8 +58,20 @@
         button:hover {
             background-color: #ff1493; /* Deeper pink */
         }
+        #errorMessage {
+            color: red;
+            margin-top: 10px;
+        }
+        #content {
+            display: none;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+        }
         .message {
-            font-size: 1.2em;
+            font-size: 1.5em;
             margin-top: 20px;
             line-height: 1.5;
         }
@@ -85,13 +93,15 @@
     <script>
         function checkPassword() {
             const input = document.getElementById('passwordInput').value;
+            const passwordContainer = document.getElementById('passwordContainer');
             const content = document.getElementById('content');
             const errorMessage = document.getElementById('errorMessage');
+
             if (input === 'ILoveYou') {
-                document.getElementById('passwordContainer').classList.add('hidden');
-                content.classList.remove('hidden');
+                passwordContainer.style.display = 'none';
+                content.style.display = 'block';
             } else {
-                errorMessage.classList.remove('hidden');
+                errorMessage.style.display = 'block';
             }
         }
     </script>

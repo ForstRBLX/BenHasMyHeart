@@ -61,9 +61,10 @@
         #errorMessage {
             color: red;
             margin-top: 10px;
+            display: none; /* Initially hide the error message */
         }
         #content {
-            display: none;
+            display: none; /* Hidden until password is correct */
             text-align: center;
             background: rgba(255, 255, 255, 0.9);
             padding: 40px;
@@ -83,9 +84,9 @@
         <div class="password-title">For Ben <3</div>
         <input type="password" id="passwordInput" placeholder="Enter password" />
         <button onclick="checkPassword()">Submit</button>
-        <p id="errorMessage" class="hidden">Incorrect password. Please try again.</p>
+        <p id="errorMessage">Incorrect password. Please try again.</p>
     </div>
-    <div id="content" class="hidden">
+    <div id="content">
         <h1>I love you Ben,</h1>
         <p class="message">You mean the world to me and when you feel down, open this website and just remember I always love you. You mean the world to me, and we will have an amazing future together 💗💗 xx</p>
     </div>
@@ -101,7 +102,7 @@
                 passwordContainer.style.display = 'none';
                 content.style.display = 'block';
             } else {
-                errorMessage.style.display = 'block';
+                errorMessage.style.display = 'block'; // Show error message if password is incorrect
             }
         }
     </script>

@@ -28,11 +28,20 @@
         .hidden {
             display: none;
         }
+        .password-container {
+            margin-bottom: 20px;
+        }
+        .password-title {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
     </style>
     <title>Tom & Ben</title>
 </head>
 <body>
-    <div id="passwordContainer">
+    <div id="passwordContainer" class="password-container">
+        <div class="password-title">For Ben <3</div>
         <input type="password" id="passwordInput" placeholder="Enter password" />
         <button onclick="checkPassword()">Submit</button>
         <p id="errorMessage" class="hidden">Incorrect password. Please try again.</p>
